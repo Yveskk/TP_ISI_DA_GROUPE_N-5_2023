@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Account {
+public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

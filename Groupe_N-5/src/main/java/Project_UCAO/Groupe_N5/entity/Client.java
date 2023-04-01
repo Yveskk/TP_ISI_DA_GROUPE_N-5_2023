@@ -23,16 +23,16 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String lastName;
-    private String firstName;
-    private LocalDate birthDate;
-    private String sex;
-    private String adress;
-    private String phoneNumber;
-    private String email;
+    private String nom;
+    private String prenom;
+    private LocalDate dateNaissance ;
+    private String sexe;
+    private String adresse;
+    private String numeroTelephone;
+    private String mail;
     private String nationalite;
 
     @OneToMany(mappedBy="client", cascade =CascadeType.ALL)
-    private List<Account> accounts;
+    private List<Compte> compte;
 
 }
