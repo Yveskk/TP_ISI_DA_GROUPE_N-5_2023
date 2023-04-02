@@ -34,7 +34,7 @@ public class CompteController {
         return compteService.saveCompte(compte);
     }
 
-    @PutMapping("/comptes")
+    @PutMapping("/comptes/{id}")
     public Compte update(@PathVariable Integer id, @RequestBody Compte compte) {
         compte.setId(id);
         return compteService.saveCompte(compte);

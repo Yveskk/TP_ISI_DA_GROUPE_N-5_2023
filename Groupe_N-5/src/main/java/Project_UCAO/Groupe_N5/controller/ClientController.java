@@ -33,11 +33,11 @@ public class ClientController {
 
     @PostMapping("/clients")
     public Client save(@RequestBody Client client) {
-        //return clientServiceImpl.saveClient(client);
-        return new Client();
-    }
+        return clientServiceImpl.saveClient(client);
+        
+    }       
 
-    @PutMapping("/clients")
+    @PutMapping("/clients/{id}")
     public Client update(@PathVariable Integer id, @RequestBody Client client) {
         client.setId(id);
         return clientServiceImpl.saveClient(client);
