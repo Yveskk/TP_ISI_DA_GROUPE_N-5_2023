@@ -3,6 +3,7 @@ package Project_UCAO.Groupe_N5.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +34,7 @@ public class Client {
     private String nationalite;
 
     @OneToMany(mappedBy="client", cascade =CascadeType.ALL)
-    private List<Compte> compte;
+    @Nullable
+    private List<Compte> comptes;
 
 }
