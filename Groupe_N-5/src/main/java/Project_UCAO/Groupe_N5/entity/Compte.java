@@ -2,6 +2,11 @@ package Project_UCAO.Groupe_N5.entity;
 
 
 
+import java.time.LocalDate;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,12 +26,12 @@ public class Compte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String numeroCompte;
+    private int   numeroCompte;
     private String type;
-    private String dateCreation;
+    private LocalDate dateCreation;
     private double solde;
     
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="client_id")
     private Client client;
