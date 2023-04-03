@@ -47,6 +47,7 @@ public class CompteController {
         Client client = clientService.getOneClient(clientId);
         compte.setClient(client);
         compte.setSolde(0);
+        compte.genereNumeroCompte();
         return compteService.saveCompte(compte);
     }
 
@@ -72,18 +73,14 @@ public class CompteController {
         compte.setSolde(compte.getSolde()-somme);
         return compteService.saveCompte(compte);
     }
-       @PutMapping("/comtes/transfer")
+       @PutMapping("/comptes/transfer")
     public List<Compte> transfer(@RequestParam("IdEnvoyeur") Integer IdEnvoyeur,
             @RequestParam("IdReceveur") Integer IdReceveur, @RequestParam("somme") Double somme) {
 
         Compte compteEnvoyeur = compteService.getOneCompte(IdEnvoyeur);
-        if (compteEnvoyeur == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "compte envoyeur introuvable");
-        }
+        
         Compte compteReceveur = compteService.getOneCompte(IdReceveur);
-        if (compteReceveur == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "compte du receveur introuvabe");
-        }
+        
         compteEnvoyeur.setSolde(compteEnvoyeur.getSolde()-somme);
         compteReceveur.setSolde(compteReceveur.getSolde()+somme);
         compteService.saveCompte(compteEnvoyeur);

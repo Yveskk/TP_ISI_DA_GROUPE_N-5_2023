@@ -46,13 +46,13 @@ public class Compte {
         StringBuilder numeroCompte = new StringBuilder();
         Random random = new Random();
 
-        // Génère 5 caractères alphanumériques aléatoires
+        
         for (int i = 0; i < 5; i++) {
             int index = random.nextInt(alphanumeric.length());
             numeroCompte.append(alphanumeric.charAt(index));
         }
 
-        // Concatène l'année de creation du compte
+        
         LocalDate currentDate = LocalDate.now();
         int year = currentDate.getYear();
         numeroCompte.append(year);
