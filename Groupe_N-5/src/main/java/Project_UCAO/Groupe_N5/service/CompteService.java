@@ -15,10 +15,11 @@ public class CompteService {
 
     public List<Compte> showCompte() {
         return compteRepository.findAll();
+
     }
 
     public Compte getOneCompte(Integer id) {
-        return compteRepository.findById(id).get();
+        return compteRepository.findById(id).orElse(null);
     }
 
     public Compte saveCompte(Compte Compte) {

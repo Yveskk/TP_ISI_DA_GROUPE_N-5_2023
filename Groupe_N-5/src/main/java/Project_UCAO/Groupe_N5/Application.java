@@ -27,9 +27,9 @@ public class Application {
 					.save(new Client(1, "BOUILI", "Espoir", LocalDate.of(2004, 1, 6), "Masculin", "Agoe",
 							"+228 91340587", "BouiliEspoir@gmail.com", "Togolais", null));
 			compteRepository
-					.save(new Compte(1, 120, "Epargne", LocalDate.of(2022, 4, 3), 234000.0, client));
+					.save(new Compte(1, "hrfds", "Epargne", LocalDate.of(2022, 4, 3), 234000.0, client));
 			compteRepository
-					.save(new Compte(2, 230, "Courant", LocalDate.of(2022, 3, 3), 567000.0, client));
+					.save(new Compte(2, "hthst", "Courant", LocalDate.of(2022, 3, 3), 567000.0, client));
 
 		};
 	}
