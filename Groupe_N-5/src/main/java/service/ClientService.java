@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class ClientService {
+    @Autowired
     ClientRepository er;
 
     public Client saveClient(Client client){
@@ -21,5 +22,8 @@ public class ClientService {
     public void deleteClient(Integer id){
         er.deleteById(id);
 
+    }
+    public Client getOneClient(Integer id){
+        return er.findById(id).get();
     }
 }
